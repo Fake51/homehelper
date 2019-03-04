@@ -1,0 +1,18 @@
+.horizontal-pane-container, .vertical-pane-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+
+    .pane {
+        flex-grow: 1;
+    }
+}
+
+.horizontal-pane-container {
+    flex-direction: row;
+}
+
+.vertical-pane-container {
+    flex-direction: column;
+}

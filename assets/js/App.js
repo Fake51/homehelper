@@ -8,8 +8,8 @@ import store from './store';
 
 const widgetStructure = [
     <CurrentWidget/>,
-    [<CurrentWidget/>, <CurrentWidget/>],
-    <CurrentWidget/>,
+    [<span></span>, <span></span>],
+    <span></span>,
 ];
 
 class App extends Component {

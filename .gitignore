@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+composer.phar
 
 # testing
 /coverage
@@ -21,3 +22,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###

@@ -35,7 +35,7 @@ const config = (state = {}, action) => {
     };
 };
 
-const initialState = {forecast: {today: {}, tomorrow: {}}, config: {weatherUpdateInterval: 5000}};
+const initialState = {forecast: {today: {}, tomorrow: {}, current: {}}, config: {weatherUpdateInterval: 5000}};
 
 const apiFetch = store => next => action => {
     if (action.type === 'API') {

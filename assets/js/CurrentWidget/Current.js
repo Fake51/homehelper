@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 
 class Current extends Component {
     getDescriptionEmoji() {
-        switch (this.props.description) {
+        switch (this.props.current.description) {
+            case 'clear sky':
             case 'sunny':
                 return '☀';
 
             default:
-                return this.props.description;
+                return this.props.current.description;
         }
     }
 
     render() {
-        return <div className='currentWidget_temperature'>{this.props.temperature}&deg; {this.getDescriptionEmoji()}</div>;
+        const {temperature, rain, wind} = this.props.current;
+        return <div className='currentWidget_temperature'>{Math.round(temperature)}&deg; {this.getDescriptionEmoji()} ({rain}) - {wind}</div>;
     }
 }
 

@@ -14,18 +14,19 @@ class Weather extends Component {
     }
 
     render() {
-        const {today, tomorrow} = this.props;
+        const {today, tomorrow, current} = this.props;
 
         return <div>
-            <Current temperature={this.props.today.current}/>
-            <Forecast title='Today' high={today.high} low={today.low} night={today.night} description={today.description}/>
-            <Forecast title='Tomorrow' high={tomorrow.high} low={tomorrow.low} night={tomorrow.night} description={tomorrow.description}/>
+            <Current current={current}/>
+            <Forecast data={today} title='Today'/>
+            <Forecast data={tomorrow} title='Tomorrow'/>
         </div>;
     }
 }
 
 const stateToProps = state => {
     return {
+        current: state.forecast.current,
         today: state.forecast.today,
         tomorrow: state.forecast.tomorrow,
         updateInterval: state.config.weatherUpdateInterval

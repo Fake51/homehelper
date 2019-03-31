@@ -21,7 +21,7 @@ class WeatherController extends AbstractController {
      */
     public function current(Request $request, Weather $weather) :Response
     {
-        $currentWeather = $weather->getCurrentForPosition('10.11', '56.15');
+        $currentWeather = $weather->getForPosition('10.11', '56.15');
         return new JsonResponse($currentWeather, 200, ['Access-Control-Allow-Origin' => '*']);
     }
 }

@@ -5,24 +5,24 @@
     "compile": "webpack"
   },
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "css-loader": "^0.28.7",
+    "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^3.0.2",
-    "material-ui": "^0.20.0",
-    "moment": "^2.20.1",
+    "material-ui": "^0.20.2",
+    "moment": "^2.24.0",
     "node-sass": "^4.7.2",
     "null-loader": "^0.1.1",
     "plantoeat": "^1.1.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "redux": "^3.7.2",
-    "sass-loader": "^6.0.6",
-    "webpack": "^3.10.0",
+    "sass-loader": "^6.0.7",
+    "webpack": "^3.12.0",
     "yahoo-weather": "^2.2.2"
   }
 }

@@ -1,0 +1,14 @@
+#app {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+
+#app > * {
+  width: 33%;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

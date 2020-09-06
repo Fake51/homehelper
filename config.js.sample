@@ -1,0 +1,5 @@
+export const weatherConfig = {
+  service: "name-of-service", # dmi or openweathermap
+  command: "llj",
+  locationId: 2617176
+};

@@ -1,40 +1,11 @@
-const path = require('path'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+const common = require('./webpack.common');
 
-module.exports = {
-    entry: [
-            './app/base.js',
-            './scss/main.scss',
-           ],
-    output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: 'app.js',
-        publicPath: '/'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                use: 'babel-loader'
-            },
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract(['css-loader?importLoaders=1'])
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-            },
-            {
-                test: path.resolve(__dirname, 'node_modules/plantoeat/node_modules/request'),
-                use: 'null-loader'
-            }
-        ]
-    },
-    plugins: [
-        new ExtractTextPlugin({ // define where to save the file
-            filename: '[name].bundle.css',
-            allChunks: true,
-        }),
-    ]
+const envs = {
+  development: 'dev',
+  production: 'prod',
 };
+/* eslint-disable global-require,import/no-dynamic-require */
+const env = envs[process.env.NODE_ENV || 'development'];
+const envConfig = require(`./webpack.${env}.js`);
+module.exports = webpackMerge(common, envConfig);

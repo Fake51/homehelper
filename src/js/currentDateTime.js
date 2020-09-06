@@ -19,15 +19,15 @@ const setDateTime = (date, dateHeader, timeHeader) => {
 };
 
 const currentDateTime = () => {
-  const dateHeader = create('h2');
-  const timeHeader = create('h1');
+  const dateHeader = create('p', {class: 'current_date'});
+  const timeHeader = create('p', {class: 'current_time'});
   const date = new Date();
 
   addEvent(() => setDateTime(new Date(), dateHeader, timeHeader), 1000)
 
   setDateTime(new Date(), dateHeader, timeHeader);
 
-  return [dateHeader, timeHeader];
+  return [timeHeader, dateHeader];
 }
 
 export default currentDateTime;

@@ -3,7 +3,7 @@ import currentDateTime from "./currentDateTime";
 import { create } from "./utils";
 
 const current = () => {
-  const section = create('section', {}, [].concat(currentDateTime(), currentWeather()));
+  const section = create('section', {class: 'current'}, [].concat(currentDateTime(), currentWeather()));
 
   return section;
 }

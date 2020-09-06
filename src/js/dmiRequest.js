@@ -1,3 +1,5 @@
+import { weatherConfig } from "../../config";
+
 const convertDay = day => {
   return {
     temp: `${Math.round(day.temp.max)}°`,
@@ -42,9 +44,11 @@ const convert = data => {
   };
 };
 
+// todo get data from config
+// todo parse and save/return hourly data into days
 const weatherRequest = callback => {
   const request = new Request(
-    "https://api.openweathermap.org/data/2.5/onecall?lat=56.2375&lon=10.23778&appid=f4de34ad3646ea561570f2f689ff0a4f&units=metric"
+    `https://www.dmi.dk/NinJo2DmiDk/ninjo2dmidk?cmd=${weatherConfig.command}&id=${weatherConfig.locationId}`
   );
   return fetch(request)
     .then(response => {
